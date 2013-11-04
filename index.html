@@ -5,6 +5,20 @@
 		<title>kikoshoungtest</title>
 	</head>
 	<body>
-		呵呵
+		<h1>外层 页面</h1>
+		<iframe src="biubiu.us/index.html"></iframe>
+		<button id="setting">设置iframe</button>
+		<script type="text/javascript">
+			window.outerObj = {
+				name: 'kikoshoung',
+				age: 26
+			}
+			document.getElementById('setting').onclick = function(){
+				frames[0].document.getElementById('item-list').apped('<li>追加</li>');
+				alert(frames[0].innerObj.name);
+				frames[0].innerObj.name = '我擦！';
+				alert(frames[0].innerObj.name);
+			}
+		</script>
 	</body>
 </html>
